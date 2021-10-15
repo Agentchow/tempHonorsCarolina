@@ -32,26 +32,26 @@ export default function Main() {
             "id":1,
             "name" : "Rahul Narvekar",
             "major": "CS and Econ",
-            "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
+            // "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
             "status": "pending"
         },{
             "id":2,
             "name" : "Charles Chow",
             "major": "CS and Business",
-            "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
+            // "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
             "status": "pending"
         },{
             "id":3,
             "name" : "Saurav Bahali",
             "major": "CS and Econ",
-            "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
+            // "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
             "status": "approved",
             "tags": "Swfit, NodeJS, Express, Java, OOP"
         },{
             "id":4,
             "name" : "Habib Khadri",
             "major": "CS and Business",
-            "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
+            // "resume" : "https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing",
             "status": "approved",
             "tags": "Trello, Product Management, Java, OOP"
         }];
@@ -148,71 +148,11 @@ export default function Main() {
         },
         { field: 'tags', headerName: 'Tags', width: 400 }
     ];
+    console.log("reached return")
 
     return (
         <div>
-            <header>
-                <AppBar>
-                    <Toolbar>
-                        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}><Home/></IconButton>
-                        <Typography variant="h6" component="div" sx={{ flexGrow : 1}}>
-                            Honors Carolina Resume App
-                        </Typography>
-                        <Button onClick={!auth? loginOpen : logOut} color= "inherit">{auth? "Logout" : "Login"}</Button>
-                    </Toolbar>
-                </AppBar>
-               <h1>Logged In</h1>
-                <Modal open={openModal} onClose={loginClose}>
-                    <Box sx={style} component="form">
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Login
-                        </Typography>
-                        <TextField id="user" label="Username" variant="outlined" />
-                        <TextField id="pass" label="Password" variant="outlined" type="password"/>
-                            <Button onClick={modalSubmit} color = "inherit">Login</Button>
-                    </Box>
-                </Modal>
-            </header>
-            {auth && <Box m={5} pl={2} pr={2}>
-                <Modal open={resumeView} onClose={closeResume}>
-                    <Box sx={style} component="form">
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Login
-                        </Typography>
-                        {/* <Document file="https://drive.google.com/file/d/1hezwS7qfRwCvbGV8wNhLqvqXQxQp7-dH/view?usp=sharing"></Document> */}
-                    </Box>
-                </Modal>
-                <Typography id="modal-modal-title" variant="h6" component="h5">
-                    Approved Resumes
-                </Typography>
-                {approved != null && 
-                <div style={{height: 400, width: '100%'}}>
-                    <DataGrid
-                        rows={approved}
-                        columns={columnsApproved}
-                        pageSize={5}
-                        rowsPerPageOptions={[5]}
-                        checkboxSelection
-                        pb={2}
-                    />
-                </div>}
-                <Typography id="modal-modal-title" variant="h6" component="h5">
-                    Pending Resumes
-                </Typography>
 
-                {pending != null && 
-                <div style={{height: 400, width: '100%'}}>
-                    <DataGrid
-                        rows={pending}
-                        columns={columnsPending}
-                        pageSize={5}
-                        rowsPerPageOptions={[5]}
-                        checkboxSelection
-                        pb={2}
-                    />
-                </div>}
-
-            </Box>}
             maintest
         </div>
 
